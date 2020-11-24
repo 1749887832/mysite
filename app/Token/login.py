@@ -6,7 +6,7 @@ from app.models import Server
 
 class Login:
     def __init__(self):
-        self.account = 13555555555
+        self.account = 17623669485
         self.password = 88888888
         self.msg = {"type": "employee", "identityType": 1, "ip": "0.0.0.0", "account": self.account,
                     "password": self.password, "assistant": False}
