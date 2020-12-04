@@ -6,7 +6,7 @@ from app.models import Server
 
 class Login:
     def __init__(self):
-        self.account = 1355555555
+        self.account = 17623669485
         self.password = 88888888
         self.msg = {"type": "employee", "identityType": 1, "ip": "0.0.0.0", "account": self.account,
                     "password": self.password, "assistant": False}
@@ -16,7 +16,7 @@ class Login:
         server = Server.objects.all()
         for i in server:
             # print(i.server)
-            if i.server == 'http://192.168.32.42:3000':
+            if i.server == 'http://192.168.32.31:3000':
                 context = requests.post(i.server + '/service-user/auth/employee', json=self.msg, verify=False)
                 # print(context.status_code)
                 if context.status_code == 200 and context.json()['msg'] == '成功':

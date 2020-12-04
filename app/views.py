@@ -12,7 +12,7 @@ sched = Scheduler()
 
 class Login_modular:
     def __init__(self):
-        # Login().userLogin()
+        Login().userLogin()
         super().__init__()
 
     def l_modular(self):
