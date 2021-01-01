@@ -15,12 +15,19 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-import app.bascketball.cba as ac
+import app.bascketball.Nba as NB
 import app.views as av
+import jkyporttest.Logic.Test_ordercase as test
+import jkyporttest.views as ja
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('login/', av.Login_modular.l_modular),
-
-    path('cba/',ac.CBA.get_msg)
+    path('nba/', NB.NBA.get_msg),
+    path('nba_msg/', NB.NBA.get_schedule),
+    path('lakes/', NB.NBA.get_lakes),
+    path('lakes_context/', NB.NBA.get_context),
+    path('order/', test.Test_Order.start_order_test),
+    path('open/', ja.open),
+    path('create/', ja.create),
 ]

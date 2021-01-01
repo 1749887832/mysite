@@ -24,7 +24,7 @@ SECRET_KEY = '#n#)=ac+4!j5qzczm74nw@m@k3xri-l$ork(zgfk1m3$%pvtd('
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["*"]
 
 # Application definition
 
@@ -36,6 +36,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'app',
+    'jkyporttest',
 ]
 
 MIDDLEWARE = [

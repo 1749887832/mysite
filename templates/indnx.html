@@ -3,10 +3,46 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <style>
+        label{
+            display: block;
+            height: 20px;
+            width: 400px;
+            margin-top: 20px;
+        }
+    </style>
 </head>
 <body>
-<button>建课程</button>
-<button>建班级</button>
-<button>11111</button>
+<form action="/create/" method="post">
+    {% csrf_token %}
+    <label for="">接口地址:
+        <input type="text" name="request_url">
+    </label>
+    <label for="">请求参数:
+        <input type="text" name="request_data">
+    </label>
+    <label for="">断言参数:
+        <input type="text" name="assert_variable">
+    </label>
+    <label for="">断言期望:
+        <input type="text" name="expect">
+    </label>
+    <label for="">断言类型:
+        <input type="text" name="assert_type">
+    </label>
+    <label for="">是否获取参数:
+        <input type="text" name="is_globals">
+    </label>
+    <label for="">参数的字段:
+        <input type="text" name="response_variable">
+    </label>
+    <label for="">使用变量:
+        <input type="text" name="use_variable">
+    </label>
+    <label for="">请求类型:
+        <input type="text" name="request_type">
+    </label>
+    <button type="submit">提交</button>
+</form>
 </body>
 </html>

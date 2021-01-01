@@ -5,9 +5,9 @@ import requests
 import json
 import datetime
 from app.models import content, Modular
-from apscheduler.scheduler import Scheduler
+from apscheduler.schedulers.background import BackgroundScheduler
 
-sched = Scheduler()
+sched = BackgroundScheduler()
 
 
 class Login_modular:
@@ -68,9 +68,9 @@ class Login_modular:
         return HttpResponse('yes')
 
 
-@sched.cron_schedule(hour=9, minute=10)
-def mystack():
-    Login_modular().l_modular()
-
-
-sched.start()
+# @sched.scheduled_job('cron', hour=8, minute=55, id='jky_main', misfire_grace_time=36000)
+# def mystack_jky():
+#     Login_modular().l_modular()
+#
+#
+# sched.start()
