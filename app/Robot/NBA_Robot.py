@@ -54,6 +54,6 @@ class N_Robot:
                 # 设置是否@所有人
                 'isAtAll': False
                 }
-        # urllib3.disable_warnings()
-        # resp = requests.post(url=url, headers=headers, json=json, verify=False)
-        # print(resp.text)
+        urllib3.disable_warnings()
+        resp = requests.post(url=url, headers=headers, json=json, verify=False)
+        print(resp.text)

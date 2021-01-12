@@ -9,7 +9,8 @@ class Change_data:
         if 'false' in chang_data:
             chang_data = chang_data.replace('false', 'False')
         # 替换掉请求参数中使用的变量
+        # print(chang_data)
         for i in data_dict:
-            if i in chang_data:
-                chang_data = chang_data.replace(i, str(data_dict[i]))
-        return eval(chang_data)
+            chang_data = chang_data.replace(str(i), str(data_dict[i]))
+        # print(chang_data)
+        return chang_data
