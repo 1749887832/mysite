@@ -135,7 +135,7 @@ class NBA:
         N_Robot().Send_msg(message=message)
 
 
-@sched.scheduled_job('cron', hour=9, minute=00, id='my_main')
+@sched.scheduled_job('cron', hour=10, minute=5, id='my_main')
 def mystack():
     NBA().get_msg()
 

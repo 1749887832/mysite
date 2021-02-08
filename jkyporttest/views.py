@@ -1,3 +1,4 @@
+from django.http import JsonResponse
 from django.shortcuts import render
 
 
@@ -18,3 +19,9 @@ def create(request):
     print(request.POST.get('use_variable'))
     print(request.POST.get('request_type'))
     return render(request, 'indnx.html')
+
+
+def ceshi(request):
+    print(request)
+    data = [{'code': '0', 'msg': '成功'}]
+    return JsonResponse(data=data, safe=False)

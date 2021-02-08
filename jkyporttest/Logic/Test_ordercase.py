@@ -22,6 +22,13 @@ from jkyporttest.Get_Token.get_token import Login_Test
 """
 
 
+class Test_Msg(object):
+    def __init__(self):
+        self.data = None
+
+    pass
+
+
 class Test_Order:
     data = list()
 
@@ -35,7 +42,7 @@ class Test_Order:
         Test_Order.data = []
 
     @pytest.mark.parametrize(
-        ['case_id', 'request_url', 'request_data', 'assert_variable', 'expect', 'is_globals', 'response_variable', 'use_variable', 'request_type'], data)
+        ['case_id', 'request_url', 'request_data', 'assert_variable', 'expect', 'is_globals', 'response_variable', 'use_variable', 'request_type'], Test_Msg().data)
     def test_case(self, case_id, request_url, request_data, assert_variable, expect, is_globals, response_variable, use_variable, request_type):
         urllib3.disable_warnings()
         message = ''
@@ -46,6 +53,8 @@ class Test_Order:
             if request_type == 'post':
                 context = requests.post(request_url, json=eval(Change_data().Changes_data(chang_data=request_data, data_dict=self.count)),
                                         headers=self.header, verify=False)
+                print(request_url,'-----------')
+                print(context.json())
             else:
                 if request_data == '':
                     context = requests.get(Change_data().Changes_data(chang_data=request_url, data_dict=self.count), headers=self.header,
@@ -58,6 +67,7 @@ class Test_Order:
             try:
                 assert str(context.json()[assert_variable]) == str(expect)
             except Exception as e:
+                print(e)
                 if e == '':
                     message = ''
                 else:

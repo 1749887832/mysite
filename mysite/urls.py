@@ -30,4 +30,5 @@ urlpatterns = [
     path('order/', test.Test_Order.start_order_test),
     path('open/', ja.open),
     path('create/', ja.create),
+    path('ceshi/',ja.ceshi)
 ]
